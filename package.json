@@ -1,0 +1,10 @@
+{
+  "name": "dr-broto-root",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix front\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
