@@ -8,6 +8,7 @@ function DrBrotoApp() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [analysisResponse, setAnalysisResponse] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
 const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   const file = event.target.files?.[0];
@@ -23,6 +24,8 @@ const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     return;
   }
 
+  setLoading(true);
+
   const formData = new FormData();
   formData.append('photo', selectedFile);
 
@@ -36,6 +39,8 @@ const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAnalysisResponse(data.result);
   } catch (error) {
     console.error('Erro ao analisar imagem', error);
+   } finally {
+    setLoading(false); // Stop loading
   }
 };
     
@@ -67,6 +72,12 @@ const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
           <div className="analysis-box">
             <h3>Resultado da Análise:</h3>
             <ReactMarkdown>{analysisResponse}</ReactMarkdown>
+          </div>
+        )}
+
+        {loading && (
+          <div className="loading-indicator">
+            Analisando imagem...
           </div>
         )}
 

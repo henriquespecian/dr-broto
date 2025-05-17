@@ -5,9 +5,7 @@ import { promisify } from 'util';
 const readFileAsync = promisify(fs.readFile);
 
 export async function analyzeImage(imagePath) {
-  try {
-
-    console.log("Passou3", imagePath);
+  try {    
 
     const ai = new GoogleGenAI({
       apiKey: process.env.GEMINI_API_KEY,
