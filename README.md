@@ -38,9 +38,7 @@ cd dr-broto
 ### 2. Install dependencies
 
 ```sh
-npm install
-cd backend && npm install
-cd ../front && npm install
+npm install && npm install --prefix backend && npm install --prefix front
 ```
 
 ### 3. Configure Environment Variables
