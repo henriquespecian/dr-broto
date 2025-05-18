@@ -1,28 +1,112 @@
-# React + TypeScript + Vite
+# 🌱 Dr. Broto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Dr. Broto** is your friendly apartment plant consultant! Upload a photo of your plant and get instant analysis, care tips, and disease detection powered by AI.
 
-Currently, two official plugins are available:
+![Dr. Broto Mascot](front/public/drBroto.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🏗️ Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```
+dr-broto/
+│
+├── backend/      # Node.js Express API (image analysis, AI integration)
+├── front/        # React + TypeScript + Vite frontend
+├── public/       # Static assets
+├── .vs/          # Visual Studio workspace files
+├── package.json  # Root scripts (dev, etc.)
+└── README.md     # You are here!
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm
+
+### 1. Clone the repository
+
+```sh
+git clone https://github.com/your-username/dr-broto.git
+cd dr-broto
+```
+
+### 2. Install dependencies
+
+```sh
+npm install
+cd backend && npm install
+cd ../front && npm install
+```
+
+### 3. Configure Environment Variables
+
+- **Backend:**  
+  Create `backend/.env` and add your [Google Gemini API key](https://ai.google.dev/):
+
+  ```
+  GEMINI_API_KEY=your_google_gemini_api_key
+  ```
+
+- **Frontend:**  
+  Already set to use the local backend in [`front/.env`](front/.env):
+
+  ```
+  VITE_API_URL=http://localhost:3001
+  ```
+
+### 4. Run the app (Dev Mode)
+
+From the project root:
+
+```sh
+npm run dev
+```
+
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- Backend: [http://localhost:3001](http://localhost:3001)
+
+---
+
+## 🖼️ Features
+
+- Upload a photo of your plant 🌿
+- AI-powered plant identification and care tips
+- Disease and deficiency detection
+- Friendly, responsive UI
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React 19, TypeScript, Vite, [react-markdown](https://github.com/remarkjs/react-markdown)
+- **Backend:** Node.js, Express, Multer, [@google/genai](https://www.npmjs.com/package/@google/genai)
+- **AI:** Google Gemini API
+
+---
+
+## 🧑‍💻 Development
+
+- Linting: ESLint with recommended and React rules ([eslint.config.js](eslint.config.js), [front/eslint.config.js](front/eslint.config.js))
+- Type checking: TypeScript strict mode
+- Hot reload: Vite
+
+### Expanding ESLint Configuration
+
+For type-aware lint rules, update your ESLint config as follows:
 
 ```js
 export default tseslint.config({
   extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
     ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
+    // ...tseslint.configs.strictTypeChecked,
+    // ...tseslint.configs.stylisticTypeChecked,
   ],
   languageOptions: {
-    // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
@@ -31,24 +115,26 @@ export default tseslint.config({
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🤝 Contributing
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Pull requests are welcome! For major changes, please open an issue first.
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+## 📷 Screenshot
+
+![Screenshot](front/public/drBrotoPrint.png)
+
+---
+
+## 💡 Inspiration
+
+Created for plant lovers who want to keep their apartment greenery healthy and happy!

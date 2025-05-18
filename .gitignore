@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .vs/
-backend/upload/
+backend/upload/*
 
 # Ignore environment files
 frontend/.env
