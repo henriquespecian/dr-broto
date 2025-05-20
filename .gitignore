@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 .vs/
 backend/upload/*
+!backend/upload/.gitkeep
 
 # Ignore environment files
 frontend/.env
