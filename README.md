@@ -2,7 +2,7 @@
 
 **Dr. Broto** is your friendly apartment plant consultant! Upload a photo of your plant and get instant analysis, care tips, and disease detection powered by AI.
 
-![Dr. Broto Mascot](front/public/drBroto.png)
+![Dr. Broto Mascot](front/src/assets/drBroto.png)
 
 ---
 
@@ -11,12 +11,20 @@
 ```
 dr-broto/
 │
-├── backend/      # Node.js Express API (image analysis, AI integration)
-├── front/        # React + TypeScript + Vite frontend
-├── public/       # Static assets
-├── .vs/          # Visual Studio workspace files
-├── package.json  # Root scripts (dev, etc.)
-└── README.md     # You are here!
+├── backend/           # Node.js Express API (image analysis, AI integration)
+│   ├── src/          # Source code
+│   └── .env          # Environment variables
+│
+├── front/            # React + TypeScript + Vite frontend
+│   ├── src/         # Source code
+│   │   ├── assets/  # Static assets
+│   │   ├── components/  # React components
+│   │   └── services/   # API services
+│   └── .env         # Environment variables
+│
+├── .vs/             # Visual Studio workspace files
+├── package.json     # Root scripts (dev, etc.)
+└── README.md        # You are here!
 ```
 
 ---
@@ -27,11 +35,12 @@ dr-broto/
 
 - Node.js (v18+ recommended)
 - npm
+- Google Gemini API key
 
 ### 1. Clone the repository
 
 ```sh
-git clone https://github.com/your-username/dr-broto.git
+git clone https://github.com/henriquespecian/dr-broto.git
 cd dr-broto
 ```
 
@@ -72,26 +81,53 @@ npm run dev
 
 ## 🖼️ Features
 
-- Upload a photo of your plant 🌿
-- AI-powered plant identification and care tips
-- Disease and deficiency detection
-- Friendly, responsive UI
+- 📸 Upload photos of your plants
+- 🤖 AI-powered plant identification
+- 🌿 Detailed care instructions
+- 🦠 Disease and deficiency detection
+- 💧 Watering and sunlight recommendations
+- 📱 Responsive, user-friendly interface
+- 🎨 Modern, clean design with animations
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React 19, TypeScript, Vite, [react-markdown](https://github.com/remarkjs/react-markdown)
-- **Backend:** Node.js, Express, Multer, [@google/genai](https://www.npmjs.com/package/@google/genai)
-- **AI:** Google Gemini API
+### Frontend
+- React 19
+- TypeScript
+- Vite
+- CSS3 with modern features
+- react-markdown for formatted responses
+- Custom hooks and services
+
+### Backend
+- Node.js
+- Express
+- Multer for file uploads
+- @google/genai for AI integration
+- Environment-based configuration
+
+### AI & Integration
+- Google Gemini API
+- Custom prompt engineering
+- Image analysis capabilities
 
 ---
 
 ## 🧑‍💻 Development
 
-- Linting: ESLint with recommended and React rules ([eslint.config.js](eslint.config.js), [front/eslint.config.js](front/eslint.config.js))
-- Type checking: TypeScript strict mode
-- Hot reload: Vite
+### Code Quality
+- ESLint with recommended and React rules
+- TypeScript strict mode
+- Prettier for code formatting
+- Hot reload with Vite
+
+### Project Organization
+- Component-based architecture
+- Service layer for API communication
+- Asset management
+- Environment configuration
 
 ### Expanding ESLint Configuration
 
@@ -117,22 +153,35 @@ export default tseslint.config({
 
 ## 🤝 Contributing
 
-Pull requests are welcome! For major changes, please open an issue first.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
 ## 📄 License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 📷 Screenshot
+## 📷 Screenshots
 
-![Screenshot](front/public/drBrotoPrint.png)
+![Screenshot](front/src/assets/drBrotoPrint.png)
 
 ---
 
 ## 💡 Inspiration
 
-Created for plant lovers who want to keep their apartment greenery healthy and happy!
+Created for plant lovers who want to keep their apartment greenery healthy and happy! Dr. Broto combines the power of AI with a friendly interface to make plant care accessible to everyone.
+
+---
+
+## 🔗 Links
+
+- [GitHub Repository](https://github.com/henriquespecian/dr-broto)
+- [Google Gemini API](https://ai.google.dev/)
