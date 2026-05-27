@@ -116,18 +116,6 @@ npm run dev
 
 ---
 
-## 🖼️ Features
-
-- 📸 Upload photos of your plants
-- 🤖 AI-powered plant identification
-- 🌿 Detailed care instructions
-- 🦠 Disease and deficiency detection
-- 💧 Watering and sunlight recommendations
-- 📱 Responsive, user-friendly interface
-- 🎨 Modern, clean design with animations
-
----
-
 ## 🛠️ Tech Stack
 
 ### Frontend
@@ -149,42 +137,6 @@ npm run dev
 - Google Gemini API
 - Custom prompt engineering
 - Image analysis capabilities
-
----
-
-## 🧑‍💻 Development
-
-### Code Quality
-- ESLint with recommended and React rules
-- TypeScript strict mode
-- Prettier for code formatting
-- Hot reload with Vite
-
-### Project Organization
-- Component-based architecture
-- Service layer for API communication
-- Asset management
-- Environment configuration
-
-### Expanding ESLint Configuration
-
-For type-aware lint rules, update your ESLint config as follows:
-
-```js
-export default tseslint.config({
-  extends: [
-    ...tseslint.configs.recommendedTypeChecked,
-    // ...tseslint.configs.strictTypeChecked,
-    // ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
 ---
 
