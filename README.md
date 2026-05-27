@@ -33,24 +33,61 @@ dr-broto/
 
 ### Prerequisites
 
-- Node.js (v18+ recommended)
-- npm
-- Google Gemini API key
+- [Google Gemini API key](https://ai.google.dev/)
+- **Docker** (recommended) — or Node.js v18+ for local dev
 
-### 1. Clone the repository
+---
+
+### 🐳 Running with Docker (recommended)
+
+#### 1. Clone the repository
 
 ```sh
 git clone https://github.com/henriquespecian/dr-broto.git
 cd dr-broto
 ```
 
-### 2. Install dependencies
+#### 2. Configure the API key
+
+Create a `.env` file in the project root:
+
+```
+GEMINI_API_KEY=your_google_gemini_api_key
+```
+
+#### 3. Build and run
+
+```sh
+docker compose up --build
+```
+
+- Frontend: [http://localhost](http://localhost)
+- Backend: [http://localhost:3001](http://localhost:3001)
+
+To stop:
+
+```sh
+docker compose down
+```
+
+---
+
+### 💻 Running locally (Dev Mode)
+
+#### 1. Clone the repository
+
+```sh
+git clone https://github.com/henriquespecian/dr-broto.git
+cd dr-broto
+```
+
+#### 2. Install dependencies
 
 ```sh
 npm install && npm install --prefix backend && npm install --prefix front
 ```
 
-### 3. Configure Environment Variables
+#### 3. Configure Environment Variables
 
 - **Backend:**  
   Create `backend/.env` and add your [Google Gemini API key](https://ai.google.dev/):
@@ -66,7 +103,7 @@ npm install && npm install --prefix backend && npm install --prefix front
   VITE_API_URL=http://localhost:3001
   ```
 
-### 4. Run the app (Dev Mode)
+#### 4. Run the app
 
 From the project root:
 

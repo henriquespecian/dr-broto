@@ -29,3 +29,4 @@ backend/upload/*
 # Ignore environment files
 frontend/.env
 backend/.env
+.env
