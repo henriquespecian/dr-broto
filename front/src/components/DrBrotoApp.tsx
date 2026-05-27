@@ -1,5 +1,5 @@
 // DrBrotoApp.jsx
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './DrBrotoApp.css';
 import imgDrBroto from '../assets/drBroto.png';
 import { ImageUpload } from './ImageUpload';
@@ -11,6 +11,23 @@ function DrBrotoApp() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [analysisResponse, setAnalysisResponse] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setIsDarkMode(true);
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+  };
 
   const handleImageSelect = (file: File) => {
     setSelectedFile(file);
@@ -38,6 +55,10 @@ function DrBrotoApp() {
     
   return (
     <div className="app-container">
+      <button className="theme-toggle" onClick={toggleTheme} aria-label="Alternar tema">
+        {isDarkMode ? '☀️' : '🌙'}
+      </button>
+
       <header className="app-header">
         <img src={imgDrBroto} alt="Dr. Broto" className="mascote-img" />
         <h1>Dr. Broto</h1>

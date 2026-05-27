@@ -3,22 +3,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap');
 
 :root {
+  /* Light theme */
   --primary-color: #2e7d32;
   --primary-light: #a5d6a7;
   --primary-lighter: rgba(165, 214, 167, 0.1);
   --accent-color: #66bb6a;
   --text-color: #1b5e20;
   --background-color: #f8faf8;
+  --card-background: #ffffff;
+  --border-color: rgba(46, 125, 50, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
   --white: #ffffff;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 4px var(--shadow-color);
+  --shadow-md: 0 4px 6px var(--shadow-color);
+  --shadow-lg: 0 10px 15px var(--shadow-color);
   --border-radius-sm: 8px;
   --border-radius-md: 15px;
   --border-radius-lg: 25px;
   --transition: all 0.3s ease;
   --font-heading: 'Quicksand', sans-serif;
   --font-body: 'Nunito', sans-serif;
+}
+
+[data-theme="dark"] {
+  --primary-color: #81c784;
+  --primary-light: #2e7d32;
+  --primary-lighter: rgba(129, 199, 132, 0.15);
+  --accent-color: #66bb6a;
+  --text-color: #e8f5e9;
+  --background-color: #121212;
+  --card-background: #1e1e1e;
+  --border-color: rgba(129, 199, 132, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --white: #1e1e1e;
 }
 
 body {
@@ -29,6 +46,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   font-size: 16px;
+  transition: var(--transition);
 }
 
 .app-container {
@@ -342,4 +360,27 @@ input[type="file"] {
 
 .github-link:hover svg {
   transform: scale(1.1);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background-color: var(--primary-lighter);
 }
